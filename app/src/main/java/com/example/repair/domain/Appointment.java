@@ -1,5 +1,7 @@
 package com.example.repair.domain;
 
+import com.example.repair.util.SystemDate;
+
 import java.time.LocalDate;
 
 public class Appointment {
@@ -7,8 +9,10 @@ public class Appointment {
     private String name;
     private String surname;
     private String phoneNumber;
-    private LocalDate date;
+    private SystemDate date;
     private Time time;
+
+    private DiagnosticCheck diagnosticCheck;
 
     public String getName() {
         return name;
@@ -34,13 +38,6 @@ public class Appointment {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
 
     public Time getTime() {
         return time;
@@ -48,5 +45,13 @@ public class Appointment {
 
     public void setTime(Time time) {
         this.time = time;
+    }
+
+    public SystemDate getDate() {
+        return date;
+    }
+
+    public void setDate(SystemDate date) {
+        this.date = date;
     }
 }
