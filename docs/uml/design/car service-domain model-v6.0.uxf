@@ -1,0 +1,89 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>210</x><y>0</y><w>120</w><h>110</h></coordinates><panel_attributes>Appointment
+--
+name: String
+surname: String
+phoneNumber: String
+date: LocalDate
+time: Time</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>240</y><w>120</w><h>50</h></coordinates><panel_attributes>Πελάτης
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>10</y><w>160</w><h>100</h></coordinates><panel_attributes>Car
+--
+plateNumber: String
+registrationDate: LocalDate
+brand: String
+model: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>230</y><w>170</w><h>90</h></coordinates><panel_attributes>Επισκευή
+--
+ολοκληρώθηκε
+/κόστος</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>240</y><w>210</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..*
+χρεώνεται &gt;</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>50</y><w>210</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1..*
+</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>10</y><w>150</w><h>100</h></coordinates><panel_attributes>DiagnosticCheck
+--
+ημέρομηνία
+problemDescription: String
+costEstimation: String
+repairDurationDays: int </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>40</y><w>230</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=0..1
+</panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>240</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>150</y><w>120</w><h>100</h></coordinates><panel_attributes>Διευθύνση
+--
+οδός
+αριθμός
+πόλη
+ΤΚ</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>100</y><w>80</w><h>150</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=1
+οδηγεί σε</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>400</y><w>170</w><h>90</h></coordinates><panel_attributes>Εργασία
+--
+ώρεςΑπασχόλησης
+ημερομηνίαΕκτέλεσης
+/κόστος</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>410</y><w>120</w><h>60</h></coordinates><panel_attributes>Μηχανικός
+--
+ειδικότητα</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>310</y><w>210</w><h>120</h></coordinates><panel_attributes>lt=-
+m1=0..1
+r1=επιβλέπων
+m2=*
+επιβλέπει &gt;</panel_attributes><additional_attributes>10;100;190;10</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>430</y><w>210</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+εκτελεί &gt;</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>330</y><w>120</w><h>100</h></coordinates><panel_attributes>Πρόσωπο
+--
+όνομα
+επώνυμο
+τηλέφωνο
+email</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>280</y><w>120</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;80;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>370</y><w>120</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>400</y><w>150</w><h>90</h></coordinates><panel_attributes>ΤύποςΑνταλλακτικού
+--
+μοντέλο
+κατασκευαστής
+τιμή
+απόθεμα</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>440</y><w>170</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=*</panel_attributes><additional_attributes>10;10;150;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>590</y><w>150</w><h>80</h></coordinates><panel_attributes>ΧρήσηΑνταλλακτικού
+--
+ποσότητα</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>590</y><w>150</w><h>80</h></coordinates><panel_attributes>ΤύποςΕργασίας
+--
+όνομα
+περιγραφή
+ωριαίοΚόστος</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>440</y><w>30</w><h>170</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>480</y><w>40</w><h>130</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>310</y><w>40</w><h>110</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>230</y><w>150</w><h>90</h></coordinates><panel_attributes>Πληρωμή
+--
+ποσό
+ημερομηνία
+τύπος:ΤύποςΠληρωμής</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>260</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=1..*
+m2=1
+</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1020</x><y>230</y><w>150</w><h>90</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Τύπος Πληρωμής
+--
+ΠΡΟΚΑΤΑΒΟΛΗ
+ΔΟΣΗ
+ΕΞΟΦΛΗΣΗ</panel_attributes><additional_attributes></additional_attributes></element></diagram>
