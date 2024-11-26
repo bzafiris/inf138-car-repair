@@ -1,5 +1,6 @@
 package com.example.repair.domain;
 
+import com.example.repair.util.SimpleCalendar;
 import com.example.repair.util.SystemDate;
 
 import java.time.LocalDate;
@@ -9,8 +10,16 @@ public class Appointment {
     private String name;
     private String surname;
     private String phoneNumber;
-    private SystemDate date;
+    private SimpleCalendar date;
     private Time time;
+
+    public Appointment(String name, String surname, String phoneNumber, SimpleCalendar date, Time time) {
+        this.name = name;
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
+        this.date = date;
+        this.time = time;
+    }
 
     private DiagnosticCheck diagnosticCheck;
 
@@ -47,11 +56,32 @@ public class Appointment {
         this.time = time;
     }
 
-    public SystemDate getDate() {
+    public SimpleCalendar getDate() {
         return date;
     }
 
-    public void setDate(SystemDate date) {
+    public void setDate(SimpleCalendar date) {
         this.date = date;
     }
+
+    /**
+     * Ελέγχει αν το τρεχον ραντεβού επικαλύπτεται χρονικά με το other
+     *
+     * @param other
+     * @return
+     */
+    public boolean overlapsWith(Appointment other) {
+
+        if (!other.date.equals(this.date)) {
+            return false;
+        }
+
+        if (time.hours != other.time.hours) {
+            return false;
+        }
+
+        return true;
+    }
+
+
 }
