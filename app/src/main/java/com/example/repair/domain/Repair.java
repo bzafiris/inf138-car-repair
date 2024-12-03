@@ -19,7 +19,12 @@ public class Repair {
     private List<RepairTask> repairTasks = new ArrayList<>();
 
     public float getTotalCost(){
-        return -1;
+        float totalCost = 0;
+
+        for(RepairTask task: repairTasks){
+            totalCost += task.getCost();
+        }
+        return totalCost;
     }
 
     public boolean isCompleted() {
