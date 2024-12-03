@@ -30,13 +30,40 @@ public class DiagnosticCheckTest {
     }
 
     @Test
+    public void testAccessorMethods(){
+
+
+        SimpleCalendar checkDate = new SimpleCalendar(2024, 1, 1);
+
+        check.setCheckDate(checkDate);
+        check.setAppointment(null);
+        check.setDescription("Other description");
+        check.setEstimatedCost(2000);
+        check.setEstimatedRepairDuration(100);
+
+        Assert.assertEquals(checkDate, check.getCheckDate());
+        Assert.assertEquals(null, check.getAppointment());
+        Assert.assertEquals("Other description", check.getDescription());
+
+    }
+
+    @Test
     public void shouldBeApproved_whenSufficientAdvancePayment() {
         Repair repair = check.approveForRepair(100, customer);
         Assert.assertNotNull(repair);
         Assert.assertNotNull(repair.getCustomer());
     }
 
+    @Test
     public void shouldBeRejected_whenInsufficientAdvancePayment(){
-
+        Repair repair = check.approveForRepair(99, customer);
+        Assert.assertNull(repair);
     }
+
+    @Test
+    public void shouldBeRejected_whenCustomerIsNull(){
+        Repair repair = check.approveForRepair(101, null);
+        Assert.assertNull(repair);
+    }
+
 }

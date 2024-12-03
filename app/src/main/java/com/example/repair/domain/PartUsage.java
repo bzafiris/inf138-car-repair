@@ -1,5 +1,4 @@
 package com.example.repair.domain;
 
-public class Customer {
-
+public class PartUsage {
 }
