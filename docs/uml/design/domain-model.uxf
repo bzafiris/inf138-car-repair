@@ -6,7 +6,7 @@ phoneNumber: String
 date: LocalDate
 time: Time
 --
-mymethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>240</y><w>120</w><h>50</h></coordinates><panel_attributes>Πελάτης
+mymethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>240</y><w>120</w><h>50</h></coordinates><panel_attributes>Customer
 --
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>10</y><w>160</w><h>100</h></coordinates><panel_attributes>Car
 --
@@ -14,10 +14,10 @@ plateNumber: String
 registrationDate: LocalDate
 brand: String
 model: String
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>230</y><w>170</w><h>90</h></coordinates><panel_attributes>Επισκευή
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>230</y><w>170</w><h>90</h></coordinates><panel_attributes>Repair
 --
-ολοκληρώθηκε
-/κόστος</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>240</y><w>210</w><h>50</h></coordinates><panel_attributes>lt=-
+completed
+/totalCost</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>240</y><w>210</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1..*
 χρεώνεται &gt;</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>50</y><w>210</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
@@ -36,7 +36,7 @@ m2=0..1
 οδός
 αριθμός
 πόλη
-ΤΚ</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>100</y><w>80</w><h>150</h></coordinates><panel_attributes>lt=-
+ΤΚ</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>100</y><w>80</w><h>150</h></coordinates><panel_attributes>lt=-&gt;
 m1=0..1
 m2=1
 οδηγεί σε</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>400</y><w>170</w><h>90</h></coordinates><panel_attributes>Εργασία
@@ -76,7 +76,7 @@ m2=1
 </panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>310</y><w>40</w><h>110</h></coordinates><panel_attributes>lt=-
 m1=*
 m2=1
-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>230</y><w>150</w><h>90</h></coordinates><panel_attributes>Πληρωμή
+</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>230</y><w>150</w><h>90</h></coordinates><panel_attributes>Payment
 --
 ποσό
 ημερομηνία
