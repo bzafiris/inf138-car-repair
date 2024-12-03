@@ -1,13 +1,20 @@
 package com.example.repair.domain;
 
-import com.example.repair.util.SystemDate;
+import com.example.repair.util.SimpleCalendar;
 
 public class Car {
 
     private String plateNumber;
-    private SystemDate registrationDate;
+    private SimpleCalendar registrationDate;
     private String brand;
     private String model;
+
+    public Car(String plateNumber, SimpleCalendar registrationDate, String brand, String model) {
+        this.plateNumber = plateNumber;
+        this.registrationDate = registrationDate;
+        this.brand = brand;
+        this.model = model;
+    }
 
     public String getPlateNumber() {
         return plateNumber;
@@ -17,11 +24,11 @@ public class Car {
         this.plateNumber = plateNumber;
     }
 
-    public SystemDate getRegistrationDate() {
+    public SimpleCalendar getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(SystemDate registrationDate) {
+    public void setRegistrationDate(SimpleCalendar registrationDate) {
         this.registrationDate = registrationDate;
     }
 

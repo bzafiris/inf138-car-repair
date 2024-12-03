@@ -1,10 +1,12 @@
 package com.example.repair.domain;
 
+import com.example.repair.util.SimpleCalendar;
 import com.example.repair.util.SystemDate;
 
 public class DiagnosticCheck {
 
-    private SystemDate checkDate;
+    private Car car;
+    private SimpleCalendar checkDate;
     private String description;
     private float estimatedCost;
     /**
@@ -14,11 +16,20 @@ public class DiagnosticCheck {
 
     private Appointment appointment;
 
-    public SystemDate getCheckDate() {
+    public DiagnosticCheck(String description, float estimatedCost, int estimatedRepairDuration, Appointment appointment, Car car) {
+        this.description = description;
+        this.estimatedCost = estimatedCost;
+        this.estimatedRepairDuration = estimatedRepairDuration;
+        this.appointment = appointment;
+        this.checkDate = SystemDate.now();
+        this.car = car;
+    }
+
+    public SimpleCalendar getCheckDate() {
         return checkDate;
     }
 
-    public void setCheckDate(SystemDate checkDate) {
+    public void setCheckDate(SimpleCalendar checkDate) {
         this.checkDate = checkDate;
     }
 
@@ -53,4 +64,24 @@ public class DiagnosticCheck {
     public void setAppointment(Appointment appointment) {
         this.appointment = appointment;
     }
+
+
+    public Repair approveForRepair(float advancePaymentAmount, Customer customer){
+
+        if (advancePaymentAmount < 0.1 * estimatedCost){
+            return null;
+        }
+
+        if (customer == null){
+            return null;
+        }
+
+        Repair repair = new Repair();
+        repair.setCustomer(customer);
+        repair.addAdvancePayment(advancePaymentAmount);
+        repair.setDiagnosticCheck(this);
+
+        return repair;
+    }
+
 }

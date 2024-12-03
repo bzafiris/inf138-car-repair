@@ -1,51 +1,50 @@
 package com.example.repair.domain;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import com.example.repair.util.SystemDate;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-class AppointmentTest {
+public class AppointmentTest {
 
     private Appointment appointment;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
 
         appointment = new Appointment("Name", "Surname", "123456",
                 SystemDate.now(), new Time(12, 0));
     }
 
     @Test
-    void sameDateDiffHours_shouldNotOverlap() {
+    public void shouldNotOverlap_withSameDateDiffHours() {
 
         Appointment other = new Appointment("Name2", "Surname2", "1234567",
                 SystemDate.now(), new Time(13, 0));
 
-        Assertions.assertFalse(appointment.overlapsWith(other));
+        Assert.assertFalse(appointment.overlapsWith(other));
 
     }
 
     @Test
-    void differentDateSameHours_shouldNotOverlap() {
+    public void shouldNotOverlap_withDifferentDateSameHours() {
 
         Appointment other = new Appointment("Name2", "Surname2", "1234567",
                 SystemDate.now().addDays(1), new Time(12, 0));
 
-        Assertions.assertFalse(appointment.overlapsWith(other));
+        Assert.assertFalse(appointment.overlapsWith(other));
 
     }
 
     @Test
-    void sameDateSameHours_shouldOverlap() {
+    public void shouldOverlap_withSameDateSameHours() {
 
         Appointment other = new Appointment("Name2", "Surname2", "1234567",
                 SystemDate.now(), new Time(12, 0));
 
-        Assertions.assertTrue(appointment.overlapsWith(other));
+        Assert.assertTrue(appointment.overlapsWith(other));
 
     }
 }
